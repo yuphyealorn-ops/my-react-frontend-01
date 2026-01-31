@@ -1,25 +1,11 @@
-import { useEffect, useState } from 'react'; 
-import './App.css'
+import ItemTester from "./ItemTester";
 
-function App() { 
-
-  const [message, setMessage] = useState("...Loading..."); 
-
-  async function fetchData() { 
-    const result = await fetch('http://localhost:3000/api/hello'); 
-    const data = await result.json(); 
-    setMessage(data.message); 
-  } 
-
-  useEffect(()=>{ 
-    fetchData(); 
-  },[]); 
-
-  return ( 
+function App() {
+  return (
     <div>
-      Message: {message}
+      <ItemTester />
     </div>
-  ) 
-} 
+  );
+}
 
-export default App
+export default App;
